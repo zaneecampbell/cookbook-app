@@ -2,6 +2,7 @@ import React from 'react';
 import { Router, Route, Switch, Link, NavLink } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import CookBookPage from '../components/CookBookPage';
+import AddRecipePage from '../components/AddRecipePage';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage'
 import PrivateRoute from './PrivateRoute';
@@ -15,6 +16,7 @@ const AppRouter = () => (
       <Switch>
         <PublicRoute path="/" component={LoginPage} exact={true}/>
         <PrivateRoute path="/cookbook" component={CookBookPage}/>
+        <PrivateRoute path="/create" component={AddRecipePage}/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>

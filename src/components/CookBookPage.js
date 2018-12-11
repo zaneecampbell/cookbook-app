@@ -1,9 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
-const DashboardPage = () => (
+const DashboardPage = () => {
+  
+
+  return (
   <div>
-    CookBook Page
+    <Link to='/create'>
+      <Button>Add Recipe</Button>
+    </Link>
   </div>
-);
+  )
+}
 
 export default DashboardPage;
