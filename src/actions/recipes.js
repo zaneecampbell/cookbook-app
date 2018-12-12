@@ -1,11 +1,12 @@
 import database from '../firebase/firebase';
 
-// adds new recipe
+// adds new recipe to redux
 export const addRecipe = (recipe) => ({
     type: 'ADD_RECIPE',
     recipe
   });
-  
+
+  // adds new recipe to firebase
 export const startAddRecipe = (recipeData = {}) => {
 return (dispatch, getState) => {
     const uid = getState().auth.uid;

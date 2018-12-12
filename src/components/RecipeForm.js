@@ -56,9 +56,10 @@ export default class ExpenseForm extends React.Component {
           value={this.state.name}
           onChange={this.onNameChange}
         />
+        <p>please include commas between ingredients</p>
         <input
           type="text"
-          placeholder="Ingredients"
+          placeholder="Ingredients      example: Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices"
           className='text-input'
           value={this.state.ingredients}
           onChange={this.onIngredientsChange}
@@ -70,6 +71,7 @@ export default class ExpenseForm extends React.Component {
           onChange={this.onInstructionsChange}
         >
         </textarea>
+        <p>please include commas between tags</p>
         <input
           type="text"
           placeholder="Tags     example: Christmas, Dessert, French"
