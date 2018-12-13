@@ -1,34 +1,39 @@
 import React from 'react';
 import moment from 'moment';
 
-export default class ExpenseForm extends React.Component {
+export default class RecipeForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: props.expense ? props.expense.description : '',
-      ingredients: props.expense ? props.expense.note : '',
-      instructions: props.expense ? (props.expense.amount / 100).toString() : '',
-      tags: props.expense ? props.expense.tag: '',
+      name: props.recipe ? props.recipe.name : '',
+      ingredients: props.recipe ? props.recipe.ingredients : '',
+      instructions: props.recipe ? props.recipe.instructions : '',
+      tags: props.recipe ? props.recipe.tags: '',
       error: ''
     };
   }
+
   onNameChange = (e) => {
     const name = e.target.value;
     this.setState(() => ({ name }));
   };
+
   onIngredientsChange = (e) => {
     const ingredients = e.target.value;
     this.setState(() => ({ ingredients }));
   };
+
   onInstructionsChange = (e) => {
     const instructions = e.target.value;
     this.setState(() => ({ instructions }));
   };
+
   onTagsChange = (e) => {
     const tags = e.target.value;
     this.setState(() => ({ tags }));
   };
+
   onSubmit = (e) => {
     e.preventDefault();
 
@@ -80,7 +85,7 @@ export default class ExpenseForm extends React.Component {
           onChange={this.onTagsChange}
         />
         <div>
-          <button className='button'>Add Recipe</button>
+          <button className='button'>Save Recipe</button>
         </div>
       </form>
     )
