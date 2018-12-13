@@ -49,6 +49,7 @@ export default class RecipeForm extends React.Component {
       });
     }
   };
+  
   render() {
     return (
       <form className='form' onSubmit={this.onSubmit}>

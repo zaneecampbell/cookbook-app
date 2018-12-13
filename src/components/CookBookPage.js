@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 
 const CookBookPage = () => {
   
-
   return (
   <div>
     <Link to='/create'>

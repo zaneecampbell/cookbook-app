@@ -10,6 +10,7 @@ export class AddRecipePage extends React.Component {
     this.props.startAddRecipe(recipe);
     this.props.history.push('/');
   };
+  
   render() {
     return (
       <div>

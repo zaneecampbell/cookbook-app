@@ -8,10 +8,12 @@ export class EditRecipePage extends React.Component {
     this.props.startEditRecipe(this.props.recipe.id, recipe);
     this.props.history.push('/');
   };
+
   onRemove = () => {
     this.props.startRemoveRecipe({ id: this.props.recipe.id });
     this.props.history.push('/');
   };
+  
   render() {
     return (
       <div>

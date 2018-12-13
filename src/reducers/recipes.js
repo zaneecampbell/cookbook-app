@@ -7,6 +7,8 @@ export default (state = recipeReducerDefaultState, action) => {
         ...state,
         action.recipe
       ];
+    case 'REMOVE_RECIPE':
+      return state.filter(({ id }) => id !== action.id);
     case 'SET_RECIPES':
       return action.recipes;
     default:

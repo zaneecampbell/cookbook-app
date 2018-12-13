@@ -27,6 +27,22 @@ export const startAddRecipe = (recipeData = {}) => {
     };
 };
 
+// removes the recipe from redux
+export const removeRecipe = ({ id } = {}) => ({
+    type: 'REMOVE_RECIPE',
+    id
+});
+
+// removes chosen recipe from firebase
+export const startRemoveRecipe = ({ id } = {}) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/recipes/${id}`).remove().then(() => {
+            dispatch(removeRecipe({ id }))
+        });
+    }
+};
+
 // sets personal recipes in redux
 export const setRecipes = (recipes) => ({
     type: 'SET_RECIPES',
@@ -35,7 +51,7 @@ export const setRecipes = (recipes) => ({
 
 // pulls recipes from firebase after login
 export const startSetRecipes = (() => {
-    return (dispatch, getState) => {          
+    return (dispatch, getState) => {
         const uid = getState().auth.uid;
         return database.ref(`users/${uid}/recipes`).once('value').then((recipeData) => {
             const recipes = [];
