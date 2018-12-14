@@ -43,6 +43,23 @@ export const startRemoveRecipe = ({ id } = {}) => {
     }
 };
 
+// edits chosen recipe in redux
+export const editRecipe = (id, updates) => ({
+    type: 'EDIT_RECIPE',
+    id,
+    updates
+});
+
+// edits chosen recipe in firebase
+export const startEditRecipe = (id, updates) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/recipes/${id}`).update(updates).then(() => {
+            dispatch(editRecipe(id, updates))
+        });
+    }
+};
+
 // sets personal recipes in redux
 export const setRecipes = (recipes) => ({
     type: 'SET_RECIPES',
