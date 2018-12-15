@@ -1,19 +1,35 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { startLogin } from '../actions/auth';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
-export const LoginPage = ({ startLogin }) => (
-    <div className="box-layout">
-        <div className="box-layout__box">
-            <h1 className='box-layout__title'>Cookbook</h1>
-            <p>Tagline for app.</p>
-            <button className='button' onClick={startLogin}>Login with Google!</button>
+const styles = theme => ({
+    buttonRoot: {
+        margin: 'auto',
+        fontSize: '1.5vw'
+    }
+});
+
+export const LoginPage = (props) => {
+    const { classes } = props;
+
+    return (
+        <div>
+            <AppBar position="static">
+                <Toolbar>
+                    <Button classes={{ root: classes.buttonRoot}} onClick={props.startLogin}>Login</Button>
+                </Toolbar>
+            </AppBar>
         </div>
-    </div>
-);
+    )
+}
 
 const mapDispatchToProps = (dispatch) => ({
     startLogin: () => dispatch(startLogin())
 });
 
-export default connect(undefined, mapDispatchToProps)(LoginPage);
+export default connect(undefined, mapDispatchToProps)(withStyles(styles)(LoginPage));
