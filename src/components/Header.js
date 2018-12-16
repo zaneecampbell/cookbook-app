@@ -50,3 +50,5 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(undefined, mapDispatchToProps)(withStyles(styles)(Header));
+
+// material ui added

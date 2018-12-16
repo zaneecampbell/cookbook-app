@@ -4,6 +4,22 @@ import RecipeForm from './RecipeForm';
 import { Link } from 'react-router-dom';
 import { startAddRecipe } from '../actions/recipes';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+  paperWrapper: {
+    margin: '20px',
+    boxShadow: 'none',
+    background: '#e6e6e6'
+  },
+  paperContainer: {
+    maxWidth: '1920px',
+    margin: 'auto',
+    boxShadow: 'none',
+    background: '#e6e6e6'
+  }
+});
 
 export class AddRecipePage extends React.Component {
   onSubmit = (recipe) => {
@@ -12,11 +28,15 @@ export class AddRecipePage extends React.Component {
   };
   
   render() {
+    const { classes } = this.props;
+
     return (
-      <div>
-        <h1>Add New Recipe</h1>
-        <RecipeForm onSubmit={this.onSubmit}/>
-      </div>
+      <Paper classes={{ root: classes.paperWrapper }}>
+        <Paper classes={{ root: classes.paperContainer }}>
+          <h1>Add New Recipe</h1>
+          <RecipeForm onSubmit={this.onSubmit}/>
+        </Paper>
+      </Paper>
     );
   }
 }
@@ -25,4 +45,4 @@ const mapDispatchToProps = (dispatch) => ({
   startAddRecipe: (recipe) => dispatch(startAddRecipe(recipe))
 });
 
-export default connect(undefined, mapDispatchToProps)(AddRecipePage);
+export default connect(undefined, mapDispatchToProps)(withStyles(styles)(AddRecipePage));
