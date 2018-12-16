@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-export default class RecipeForm extends React.Component {
+export class RecipeForm extends React.Component {
   constructor(props) {
     super(props);
 
@@ -92,3 +92,5 @@ export default class RecipeForm extends React.Component {
     )
   }
 }
+
+export default RecipeForm;
