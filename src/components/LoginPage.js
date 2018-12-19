@@ -16,7 +16,7 @@ const styles = theme => ({
 
 export const LoginPage = (props) => {
     const { classes } = props;
-
+    console.log(props)
     return (
         <div>
             <AppBar position="static">
@@ -33,3 +33,5 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(undefined, mapDispatchToProps)(withStyles(styles)(LoginPage));
+
+// material ui added

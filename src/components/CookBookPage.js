@@ -7,13 +7,14 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
   buttonLabel: {
-    fontSize: '20px'
+    fontSize: '20px',
+    color: '#e6e6e6'
   },
   paperWrapper: {
-    //boxShadow: 'none'
+    boxShadow: 'none',
     paddingTop: '30px',
     textAlign: 'center',
-    backgroundColor: '#e6e6e6'
+    backgroundColor: '#e6e6e6',
   }
 });
 

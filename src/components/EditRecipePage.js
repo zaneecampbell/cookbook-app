@@ -5,16 +5,24 @@ import { startEditRecipe, startRemoveRecipe } from '../actions/recipes';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
-  typographyTitle: {
-    fontSize: '20px',
-    marginBottom: '50px'
+  divWrapper: {
+    margin: '20px',
+    boxShadow: 'none',
+    background: '#e6e6e6'
+  },
+  paperContainer: {
+    maxWidth: '1920px',
+    margin: 'auto',
+    boxShadow: 'none',
+    background: '#e6e6e6'
   },
   removeLabel: {
     fontSize: '20px',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    color: '#e6e6e6'
   }
 });
 
@@ -33,19 +41,15 @@ export class EditRecipePage extends React.Component {
     const { classes } = this.props;
 
     return (
-      <div>
-        <Grid container
-          direction="column"
-          justify="center"
-          alignItems="center"
-        >
-          <Typography classes={{ root: classes.typographyTitle }} >Edit Recipe</Typography>
+      <div className={classes.divWrapper}>
+        <Paper classes={{ root: classes.paperContainer }}>
+          <h1>Edit Recipe</h1>
             <RecipeForm
               recipe={this.props.recipe}
               onSubmit={this.onSubmit}
             />
-            <Button classes={{ label: classes.removeLabel }} onClick={this.onRemove}>Remove Recipe</Button>
-        </Grid>
+            <Button style={{ backgroundColor: '#3f51b5' }} classes={{ label: classes.removeLabel }} onClick={this.onRemove}>Remove</Button>
+        </Paper>
       </div>
     );
   }

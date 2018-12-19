@@ -8,7 +8,7 @@ import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
-  paperWrapper: {
+  divWrapper: {
     margin: '20px',
     boxShadow: 'none',
     background: '#e6e6e6'
@@ -31,12 +31,12 @@ export class AddRecipePage extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Paper classes={{ root: classes.paperWrapper }}>
+      <div className={classes.divWrapper}>
         <Paper classes={{ root: classes.paperContainer }}>
           <h1>Add New Recipe</h1>
           <RecipeForm onSubmit={this.onSubmit}/>
         </Paper>
-      </Paper>
+      </div>
     );
   }
 }
@@ -46,3 +46,5 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(undefined, mapDispatchToProps)(withStyles(styles)(AddRecipePage));
+
+// styled with material ui
