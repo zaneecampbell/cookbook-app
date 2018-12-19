@@ -10,20 +10,40 @@ const styles = theme => ({
     paperWrapper: {
         paddingTop: '10px',
         paddingBottom: '10px',
-        margin: '20px'
+        marginLeft: '20px',
+        marginRight: '20px'
+    },
+    typographyPaper: {
+        boxShadow: 'none',
+        marginLeft: '20px',
+        [theme.breakpoints.only('xs')]: {
+            textAlign: 'center'
+        }
     },
     typographyTitle: {
         fontSize: '20px',
-        marginLeft: '20px'
     },
     typographyTags: {
         fontSize: '15px',
-        marginLeft: '20px'
     },
     editButtonLabel: {
         fontSize: '10px',
         textDecoration: 'none',
         color: '#e6e6e6'
+    },
+    editButtonRoot: {
+        backgroundColor: '#3f51b5', 
+        padding: '10px', 
+        marginRight: '20px',
+        [theme.breakpoints.only('xs')]: {
+            margin: 'auto',
+            padding: '20px'
+        }
+    },
+    editButtonGrid: {
+        [theme.breakpoints.only('xs')]: {
+            marginTop: '20px'
+        }
     }
 });
 
@@ -39,15 +59,15 @@ const RecipeListItem = ({ id, name, ingredients, instructions, tags, classes }) 
                 alignItems="center"
                 >
                     <Grid xs={10} item>
-                        <Paper style={{ boxShadow: 'none' }}>
+                        <Paper classes={{ root: classes.typographyPaper }}>
                             <Typography classes={{ root: classes.typographyTitle }}>{name}</Typography>
                             <Typography classes={{ root: classes.typographyTags }}>{tags}</Typography>
                         </Paper>
                     </Grid>
-                    <Grid xs={2} item>
-                        <Paper style={{ boxShadow: 'none' }}>
+                    <Grid xs={12} sm={2} item classes={{ item: classes.editButtonGrid }}>
+                        <Paper style={{ boxShadow: 'none', textAlign: 'center' }}>
                             <Link style={{ textDecoration: 'none' }} to={`/edit/${id}`}>
-                                <Button style={{ backgroundColor: '#3f51b5', padding: '10px', marginRight: '10px' }} classes={{ label: classes.editButtonLabel }} >Edit Recipe</Button>
+                                <Button classes={{ root: classes.editButtonRoot, label: classes.editButtonLabel }} >Edit Recipe</Button>
                             </Link>
                         </Paper>
                     </Grid>
