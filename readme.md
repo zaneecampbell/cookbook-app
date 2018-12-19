@@ -1,7 +1,7 @@
-# Git Commands
+CookBook App
 
-git init - Create a new git repo
-git status - View the changes to your project code
-git add - Add files to staging area
-git commit - Creates a new commit with files from staging area
-git log - View recent commits
+
+My midwestern mother has books upon books filled with random sheets of scrap paper for tons of recipes. This aims to solve that in a quick, searchable, website.
+
+
+I'm using React as my front-end, React-Router for routing, React-Redux for snappy real-time use and state management, Firebase as a database, and Material-UI for design.
