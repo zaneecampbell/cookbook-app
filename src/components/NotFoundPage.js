@@ -8,3 +8,5 @@ const NotFoundPage = () => (
 );
 
 export default NotFoundPage;
+
+// Add cute little lost cook image?

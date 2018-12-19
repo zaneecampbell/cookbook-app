@@ -65,3 +65,5 @@ const mapDispatchToProps = (dispatch, props) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(EditRecipePage));
+
+// Material-UI Added
