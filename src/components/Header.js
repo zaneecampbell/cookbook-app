@@ -11,7 +11,8 @@ import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
   buttonRoot: {
-    fontSize: '20px'
+    fontSize: '20px',
+    color: '#e6e6e6'
   },
   toolbar: {
     alignItems: 'center'
@@ -33,7 +34,7 @@ export const Header = (props) => {
         >
           <Grid item>
             <Link style={{ textDecoration: 'none' }} to="/cookbook">
-              <Typography style={{ fontSize: '20px' }}>CookBook</Typography>
+              <Typography style={{ fontSize: '20px', color: '#e6e6e6' }}>CookBook</Typography>
             </Link>
           </Grid>
           <Grid item>
@@ -51,4 +52,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(undefined, mapDispatchToProps)(withStyles(styles)(Header));
 
-// material ui added
+// Material-UI Added

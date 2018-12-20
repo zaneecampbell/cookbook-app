@@ -50,4 +50,4 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(withStyles(styles)(RecipeList));
 
-// Material-UI added
+// Material-UI Added

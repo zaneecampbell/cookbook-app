@@ -47,4 +47,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(undefined, mapDispatchToProps)(withStyles(styles)(AddRecipePage));
 
-// styled with material ui
+// Material-UI Added

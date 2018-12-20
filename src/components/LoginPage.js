@@ -10,7 +10,8 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
     buttonRoot: {
         margin: 'auto',
-        fontSize: '1.5vw'
+        fontSize: '1.5vw',
+        color: '#e6e6e6'
     }
 });
 
@@ -21,7 +22,7 @@ export const LoginPage = (props) => {
         <div>
             <AppBar position="static">
                 <Toolbar>
-                    <Button classes={{ root: classes.buttonRoot}} onClick={props.startLogin}>Login</Button>
+                    <Button classes={{ root: classes.buttonRoot }} onClick={props.startLogin}>Login</Button>
                 </Toolbar>
             </AppBar>
         </div>
@@ -34,4 +35,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(undefined, mapDispatchToProps)(withStyles(styles)(LoginPage));
 
-// material ui added
+// Material-UI Added

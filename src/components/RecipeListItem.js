@@ -18,6 +18,13 @@ const styles = theme => ({
         marginLeft: '20px',
         [theme.breakpoints.only('xs')]: {
             textAlign: 'center'
+        },
+        transition: [theme.transitions.create(
+            ['background'],
+            {duration: '.3s'}
+        )],
+        '&:hover': {
+            background: '#e6e6e6'
         }
     },
     typographyTitle: {
@@ -59,10 +66,12 @@ const RecipeListItem = ({ id, name, ingredients, instructions, tags, classes }) 
                 alignItems="center"
                 >
                     <Grid xs={10} item>
-                        <Paper classes={{ root: classes.typographyPaper }}>
-                            <Typography classes={{ root: classes.typographyTitle }}>{name}</Typography>
-                            <Typography classes={{ root: classes.typographyTags }}>{tags}</Typography>
-                        </Paper>
+                        <Link style={{ textDecoration: 'none' }} to={`/view/${id}`}>
+                            <Paper classes={{ root: classes.typographyPaper }}>
+                                <Typography classes={{ root: classes.typographyTitle }}>{name}</Typography>
+                                <Typography classes={{ root: classes.typographyTags }}>{tags}</Typography>
+                            </Paper>
+                        </Link>
                     </Grid>
                     <Grid xs={12} sm={2} item classes={{ item: classes.editButtonGrid }}>
                         <Paper style={{ boxShadow: 'none', textAlign: 'center' }}>

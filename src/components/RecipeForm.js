@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 
 export class RecipeForm extends React.Component {
   constructor(props) {
