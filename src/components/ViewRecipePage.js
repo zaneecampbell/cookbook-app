@@ -48,3 +48,8 @@ const mapStateToProps = (state, props) => ({
 });
 
 export default connect(mapStateToProps)(withStyles(styles)(ViewRecipePage));
+
+// Center name
+// unordered list of ingredients seperated by there commas
+// instructions
+// tags italicized

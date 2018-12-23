@@ -22,6 +22,7 @@ const styles = theme => ({
 });
 
 export class AddRecipePage extends React.Component {
+  // submits to firebase and redux then pushes to homepage
   onSubmit = (recipe) => {
     this.props.startAddRecipe(recipe);
     this.props.history.push('/');

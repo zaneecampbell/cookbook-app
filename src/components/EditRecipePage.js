@@ -27,11 +27,13 @@ const styles = theme => ({
 });
 
 export class EditRecipePage extends React.Component {
+  // submits the changes to firebase and redux
   onSubmit = (recipe) => {
     this.props.startEditRecipe(this.props.recipe.id, recipe);
     this.props.history.push('/');
   };
 
+  // removes the changes from firebase and redux
   onRemove = () => {
     this.props.startRemoveRecipe({ id: this.props.recipe.id });
     this.props.history.push('/');

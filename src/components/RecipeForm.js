@@ -13,21 +13,25 @@ export class RecipeForm extends React.Component {
     };
   }
 
+  // typing in the field changes the name
   onNameChange = (e) => {
     const name = e.target.value;
     this.setState(() => ({ name }));
   };
 
+  // typing in the field changes the ingredients
   onIngredientsChange = (e) => {
     const ingredients = e.target.value;
     this.setState(() => ({ ingredients }));
   };
 
+  // typing in the field changes the instructions
   onInstructionsChange = (e) => {
     const instructions = e.target.value;
     this.setState(() => ({ instructions }));
   };
 
+  // typing in the field changes the tags
   onTagsChange = (e) => {
     const tags = e.target.value;
     this.setState(() => ({ tags }));
