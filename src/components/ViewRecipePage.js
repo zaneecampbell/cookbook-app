@@ -31,11 +31,12 @@ export const ViewRecipePage = (props) => {
             >
                     <Grid xs={12} item>
                         <Typography variant='h2'>{props.recipe.name}</Typography>
+                        <Typography style={{fontSize: '10px'}} variant="overline">Tags: {props.recipe.tags}</Typography>
+                        <br />
                     </Grid>
                     <Grid item>
-                        <Typography>{props.recipe.ingredients}</Typography>
-                        <Typography>{props.recipe.instructions}</Typography>
-                        <Typography>{props.recipe.tags}</Typography>
+                        <Typography variant='h3'>{props.recipe.ingredients}</Typography>
+                        <Typography variant='h3'>{props.recipe.instructions}</Typography>
                     </Grid>
                 </Grid>
             </Paper>
