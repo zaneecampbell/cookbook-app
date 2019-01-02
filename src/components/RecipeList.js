@@ -43,8 +43,10 @@ export const RecipeList = (props) => {
 }
 
 const mapStateToProps = (state) => {
+  const orderedRecipes = state.recipes.sort((a, b) => a.name !== b.name ? a.name < b.name ? -1 : 1 : 0);
+
   return {
-    recipes: state.recipes
+    recipes: orderedRecipes
   };
 };
 
