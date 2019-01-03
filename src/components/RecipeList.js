@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import RecipeListItem from './RecipeListItem';
+import searchRecipes from '../searches/recipes';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Typography } from '@material-ui/core';
@@ -46,7 +47,7 @@ const mapStateToProps = (state) => {
   const orderedRecipes = state.recipes.sort((a, b) => a.name !== b.name ? a.name < b.name ? -1 : 1 : 0);
 
   return {
-    recipes: orderedRecipes
+    recipes: searchRecipes(orderedRecipes, state.search)
   };
 };
 
