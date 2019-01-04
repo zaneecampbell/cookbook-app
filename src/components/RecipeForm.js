@@ -67,7 +67,7 @@ export class RecipeForm extends React.Component {
     const { classes } = this.props;
     return (
       <form onSubmit={this.onSubmit}>
-        {this.state.error && <p className='form__error'>{this.state.error}</p>}
+        {this.state.error && <p>{this.state.error}</p>}
         <input
           type="text"
           placeholder="Name"
@@ -99,7 +99,6 @@ export class RecipeForm extends React.Component {
         <div>
           <Button style={{ backgroundColor: '#3f51b5' }} classes={{ label: classes.removeLabel }}>Save Recipe</Button>
         </div>
-        <br />
       </form>
     )
   }
