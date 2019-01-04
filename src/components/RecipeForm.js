@@ -1,4 +1,14 @@
 import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+  removeLabel: {
+    fontSize: '20px',
+    textDecoration: 'none',
+    color: '#e6e6e6'
+  }
+});
 
 export class RecipeForm extends React.Component {
   constructor(props) {
@@ -54,14 +64,14 @@ export class RecipeForm extends React.Component {
   };
   
   render() {
+    const { classes } = this.props;
     return (
-      <form className='form' onSubmit={this.onSubmit}>
+      <form onSubmit={this.onSubmit}>
         {this.state.error && <p className='form__error'>{this.state.error}</p>}
         <input
           type="text"
           placeholder="Name"
           autoFocus
-          className='text-input'
           value={this.state.name}
           onChange={this.onNameChange}
         />
@@ -69,7 +79,6 @@ export class RecipeForm extends React.Component {
         <input
           type="text"
           placeholder="Ingredients      example: Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices"
-          className='text-input'
           value={this.state.ingredients}
           onChange={this.onIngredientsChange}
         />
@@ -84,16 +93,16 @@ export class RecipeForm extends React.Component {
         <input
           type="text"
           placeholder="Tags     example: Christmas, Dessert, French"
-          className='text-input'
           value={this.state.tags}
           onChange={this.onTagsChange}
         />
         <div>
-          <button className='button'>Save Recipe</button>
+          <Button style={{ backgroundColor: '#3f51b5' }} classes={{ label: classes.removeLabel }}>Save Recipe</Button>
         </div>
+        <br />
       </form>
     )
   }
 }
 
-export default RecipeForm;
+export default withStyles(styles)(RecipeForm);
