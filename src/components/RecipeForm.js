@@ -1,6 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
   removeLabel: {
@@ -68,36 +69,40 @@ export class RecipeForm extends React.Component {
     return (
       <form onSubmit={this.onSubmit}>
         {this.state.error && <p>{this.state.error}</p>}
-        <input
+        <TextField
           type="text"
           placeholder="Name"
           autoFocus
           value={this.state.name}
           onChange={this.onNameChange}
+          variant='filled'
         />
         <p>please include commas between ingredients</p>
-        <input
+        <TextField
           type="text"
           placeholder="Ingredients      example: Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices"
           value={this.state.ingredients}
           onChange={this.onIngredientsChange}
+          variant='filled'
         />
-        <textarea
+        <TextField
           placeholder="Instructions"
-          className='text-area'
+          multiline
+          rowsMax="4"
           value={this.state.instructions}
           onChange={this.onInstructionsChange}
-        >
-        </textarea>
+          variant='filled'
+        />
         <p>please include commas between tags</p>
-        <input
+        <TextField
           type="text"
           placeholder="Tags     example: Christmas, Dessert, French"
           value={this.state.tags}
           onChange={this.onTagsChange}
+          variant='filled'
         />
         <div>
-          <Button style={{ backgroundColor: '#3f51b5' }} classes={{ label: classes.removeLabel }}>Save Recipe</Button>
+          <Button type='submit' style={{ backgroundColor: '#3f51b5' }} classes={{ label: classes.removeLabel }}>Save Recipe</Button>
         </div>
       </form>
     )
