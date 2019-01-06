@@ -21,7 +21,6 @@ export const ViewRecipePage = (props) => {
     const { classes } = props;
     const ingredients = props.recipe.ingredients.split(', ')
 
-    
     return (
         <div>
             <Paper classes={{ root: classes.paperWrapper }}>
@@ -38,13 +37,22 @@ export const ViewRecipePage = (props) => {
                     </Grid>
                     <Grid item>
                         <Typography variant='h3'>
+                            Ingredients:
+                        </Typography>
+                        <Typography variant='h3'>
                             {
                                 ingredients.map((ingredient) => {
                                     return <li key={ingredient}> {ingredient} </li>
                                 })
                             }
                         </Typography>
-                        <Typography variant='h3'>{props.recipe.instructions}</Typography>
+                        <br />
+                        <Typography variant='h3'>
+                            Instructions:
+                        </Typography>
+                        <Typography variant='h3'>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{props.recipe.instructions}
+                        </Typography>
                     </Grid>
                 </Grid>
             </Paper>
@@ -58,6 +66,4 @@ const mapStateToProps = (state, props) => ({
 
 export default connect(mapStateToProps)(withStyles(styles)(ViewRecipePage));
 
-// Center name
-// unordered list of ingredients seperated by there commas
 // instructions
