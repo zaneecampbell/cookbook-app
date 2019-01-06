@@ -29,7 +29,7 @@ export const RecipeList = (props) => {
       {
         props.recipes.length === 0 ? (
           <Typography align='center' classes={{ root: classes.noRecipes }}>
-            No Recipes Yet! Lets get cooking!
+            No Recipes!
           </Typography>
         ) : (
             props.recipes.map((recipe) => {
@@ -53,4 +53,4 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps)(withStyles(styles)(RecipeList));
 
-// Material-UI Added
+// done

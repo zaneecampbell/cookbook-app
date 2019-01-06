@@ -88,4 +88,4 @@ const RecipeListItem = ({ id, name, ingredients, instructions, tags, classes }) 
 
 export default withStyles(styles)(RecipeListItem);
 
-// Material-UI Added
+// done
