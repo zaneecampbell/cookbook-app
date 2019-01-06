@@ -19,7 +19,9 @@ const styles = theme => ({
 
 export const ViewRecipePage = (props) => {
     const { classes } = props;
+    const ingredients = props.recipe.ingredients.split(', ')
 
+    
     return (
         <div>
             <Paper classes={{ root: classes.paperWrapper }}>
@@ -35,7 +37,13 @@ export const ViewRecipePage = (props) => {
                         <br />
                     </Grid>
                     <Grid item>
-                        <Typography variant='h3'>{props.recipe.ingredients}</Typography>
+                        <Typography variant='h3'>
+                            {
+                                ingredients.map((ingredient) => {
+                                    return <li key={ingredient}> {ingredient} </li>
+                                })
+                            }
+                        </Typography>
                         <Typography variant='h3'>{props.recipe.instructions}</Typography>
                     </Grid>
                 </Grid>
