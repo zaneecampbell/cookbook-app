@@ -17,7 +17,6 @@ const styles = theme => ({
 
 export const LoginPage = (props) => {
     const { classes } = props;
-    console.log(props)
     return (
         <div>
             <AppBar position="static">
