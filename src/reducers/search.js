@@ -1,7 +1,8 @@
 // Search Reducer
 
 const searchReducerDefault = {
-    text: ''
+    text: '',
+    tags: ''
 };
 
 export default ( state = searchReducerDefault, action ) => {
@@ -11,6 +12,11 @@ export default ( state = searchReducerDefault, action ) => {
                 ...state,
                 text: action.text
             };
+        case 'SET_TAGS_SEARCH':
+            return {
+                ...state,
+                tags: action.tags
+            }
         default:
             return state
     }

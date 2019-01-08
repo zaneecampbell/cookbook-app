@@ -28,4 +28,4 @@ export const LoadingPage = (props) => {
 
 export default withStyles(styles)(LoadingPage);
 
-// center it
+// done
