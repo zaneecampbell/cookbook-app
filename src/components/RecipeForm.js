@@ -1,9 +1,23 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
+  formContainer: {
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100vw'
+  },
+  paperWrapper: {
+    width: '960px',
+    maxWidth: '960px',
+    padding: '10px',
+    marginLeft: '20px',
+    marginRight: '20px'
+},
   removeLabel: {
     fontSize: '20px',
     textDecoration: 'none',
@@ -67,44 +81,50 @@ export class RecipeForm extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <form onSubmit={this.onSubmit}>
-        {this.state.error && <p>{this.state.error}</p>}
-        <TextField
-          type="text"
-          placeholder="Name"
-          autoFocus
-          value={this.state.name}
-          onChange={this.onNameChange}
-          variant='filled'
-        />
-        <p>please include commas between ingredients</p>
-        <TextField
-          type="text"
-          placeholder="Ingredients      example: Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices"
-          value={this.state.ingredients}
-          onChange={this.onIngredientsChange}
-          variant='filled'
-        />
-        <TextField
-          placeholder="Instructions"
-          multiline
-          rowsMax="4"
-          value={this.state.instructions}
-          onChange={this.onInstructionsChange}
-          variant='filled'
-        />
-        <p>please include commas between tags</p>
-        <TextField
-          type="text"
-          placeholder="Tags     example: Christmas, Dessert, French"
-          value={this.state.tags}
-          onChange={this.onTagsChange}
-          variant='filled'
-        />
-        <div>
-          <Button type='submit' style={{ backgroundColor: '#3f51b5' }} classes={{ label: classes.removeLabel }}>Save Recipe</Button>
-        </div>
-      </form>
+      <div className={ classes.formContainer }>
+        <Paper classes={{ root: classes.paperWrapper }}>
+          <form onSubmit={this.onSubmit}>
+            {this.state.error && <p>{this.state.error}</p>}
+            <TextField
+              type="text"
+              placeholder="Name"
+              autoFocus
+              value={this.state.name}
+              onChange={this.onNameChange}
+              variant='filled'
+            />
+            <p>please include commas between ingredients</p>
+            <TextField
+              type="text"
+              placeholder="Ingredients      example: Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices"
+              value={this.state.ingredients}
+              onChange={this.onIngredientsChange}
+              variant='filled'
+            />
+            <br />
+            <br />
+            <TextField
+              placeholder="Instructions"
+              multiline
+              rowsMax="4"
+              value={this.state.instructions}
+              onChange={this.onInstructionsChange}
+              variant='filled'
+            />
+            <p>please include commas between tags</p>
+            <TextField
+              type="text"
+              placeholder="Tags     example: Christmas, Dessert, French"
+              value={this.state.tags}
+              onChange={this.onTagsChange}
+              variant='filled'
+            />
+            <div>
+              <Button type='submit' style={{ backgroundColor: '#3f51b5' }} classes={{ label: classes.removeLabel }}>Save Recipe</Button>
+            </div>
+          </form>
+        </Paper>
+      </div>
     )
   }
 }

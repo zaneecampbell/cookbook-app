@@ -21,7 +21,6 @@ export class RecipeListSearch extends React.Component {
             <div>
                 <input
                 type="text"
-                className="text-input"
                 placeholder='Search by recipe name'
                 value={this.props.search.text}
                 onChange={this.onTextChange}
@@ -31,7 +30,6 @@ export class RecipeListSearch extends React.Component {
             <div>
                 <input
                 type="text"
-                className="text-input"
                 placeholder='Search by recipe tags'
                 value={this.props.search.tags}
                 onChange={this.onTagsSearchChange}
@@ -55,4 +53,4 @@ const mapDispatchToProps = (dispatch) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeListSearch);
 
-// done
+// Move search fields to left about recipe list names
