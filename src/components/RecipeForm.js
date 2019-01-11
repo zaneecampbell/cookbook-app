@@ -12,7 +12,6 @@ const styles = theme => ({
   },
   paperWrapper: {
     width: '960px',
-    maxWidth: '960px',
     padding: '10px',
     marginLeft: '20px',
     marginRight: '20px'

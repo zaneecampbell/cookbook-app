@@ -11,6 +11,7 @@ const styles = theme => ({
     maxWidth: '960px',
     margin: 'auto',
     boxShadow: 'none',
+    textAlign: 'left',
     background: 'none'
   },
   noRecipes: {
