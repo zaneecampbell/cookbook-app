@@ -8,8 +8,7 @@ const styles = theme => ({
   formContainer: {
     alignItems: 'center',
     display: 'flex',
-    justifyContent: 'center',
-    width: '100vw'
+    justifyContent: 'center'
   },
   paperWrapper: {
     width: '960px',
