@@ -10,6 +10,10 @@ const styles = theme => ({
     display: 'flex',
     justifyContent: 'center'
   },
+  formDefault: {
+    display: 'flex',
+    flexDirection: 'column'
+  },
   paperWrapper: {
     width: '960px',
     padding: '10px',
@@ -81,7 +85,7 @@ export class RecipeForm extends React.Component {
     return (
       <div className={ classes.formContainer }>
         <Paper classes={{ root: classes.paperWrapper }}>
-          <form onSubmit={this.onSubmit}>
+          <form className={ classes.formDefault } onSubmit={this.onSubmit}>
             {this.state.error && <p>{this.state.error}</p>}
             <TextField
               type="text"
