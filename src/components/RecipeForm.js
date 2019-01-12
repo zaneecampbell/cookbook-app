@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import { Typography } from '@material-ui/core';
 
 const styles = theme => ({
   formContainer: {
@@ -13,6 +14,9 @@ const styles = theme => ({
   formDefault: {
     display: 'flex',
     flexDirection: 'column'
+  },
+  inputTextSize: {
+    fontSize: '30px'
   },
   paperWrapper: {
     width: '960px',
@@ -87,41 +91,69 @@ export class RecipeForm extends React.Component {
         <Paper classes={{ root: classes.paperWrapper }}>
           <form className={ classes.formDefault } onSubmit={this.onSubmit}>
             {this.state.error && <p>{this.state.error}</p>}
+            <Typography style={{fontSize: '35px'}}>Name</Typography>
             <TextField
               type="text"
-              placeholder="Name"
+              placeholder="example: BLT"
               autoFocus
               value={this.state.name}
               onChange={this.onNameChange}
               variant='filled'
+              InputProps={{
+                classes: {
+                  input: classes.inputTextSize
+                }
+              }}
             />
-            <p>please include commas between ingredients</p>
+            <br />
+            <Typography style={{fontSize: '35px'}}>Ingredients</Typography>
             <TextField
               type="text"
-              placeholder="Ingredients      example: Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices"
+              placeholder="example: Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices"
               value={this.state.ingredients}
               onChange={this.onIngredientsChange}
               variant='filled'
+              InputProps={{
+                classes: {
+                  input: classes.inputTextSize
+                }
+              }}
             />
             <br />
-            <br />
+            <Typography style={{fontSize: '35px'}}>Instructions</Typography>
             <TextField
-              placeholder="Instructions"
+              placeholder="Step 1: Cut Bread&#10;
+                           Step 2: Stack ingredients on Bread&#10;
+                           Step 3: Enclose with other slice of Bread&#10;
+                           Step 4: Enjoy!"
               multiline
-              rowsMax="4"
+              rows='10'
+              rowsMax='50'
               value={this.state.instructions}
               onChange={this.onInstructionsChange}
               variant='filled'
+              InputProps={{
+                classes: {
+                  input: classes.inputTextSize
+                }
+              }}
             />
-            <p>please include commas between tags</p>
+            <br />
+            <Typography style={{fontSize: '35px'}}>Tags</Typography>
             <TextField
               type="text"
               placeholder="Tags     example: Christmas, Dessert, French"
               value={this.state.tags}
               onChange={this.onTagsChange}
               variant='filled'
+              InputProps={{
+                classes: {
+                  input: classes.inputTextSize
+                }
+              }}
             />
             <div>
+              <br />
               <Button type='submit' style={{ backgroundColor: '#3f51b5' }} classes={{ label: classes.removeLabel }}>Save Recipe</Button>
             </div>
           </form>
