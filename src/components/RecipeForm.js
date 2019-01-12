@@ -18,6 +18,10 @@ const styles = theme => ({
   inputTextSize: {
     fontSize: '30px'
   },
+  inputTextSizeInstructions: {
+    lineHeight: '30px',
+    fontSize: '30px'
+  },
   paperWrapper: {
     width: '960px',
     padding: '10px',
@@ -134,7 +138,7 @@ export class RecipeForm extends React.Component {
               variant='filled'
               InputProps={{
                 classes: {
-                  input: classes.inputTextSize
+                  inputMultiline: classes.inputTextSizeInstructions
                 }
               }}
             />
