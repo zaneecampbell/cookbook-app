@@ -47,11 +47,13 @@ export class EditRecipePage extends React.Component {
       <div className={classes.divWrapper}>
         <Paper classes={{ root: classes.paperContainer }}>
           <h1>Edit Recipe</h1>
+          <Button style={{ backgroundColor: 'red' }} classes={{ label: classes.removeLabel }} onClick={this.onRemove}>Remove</Button>
+          <br />
+          <br />
             <RecipeForm
               recipe={this.props.recipe}
               onSubmit={this.onSubmit}
             />
-            <Button style={{ backgroundColor: '#3f51b5' }} classes={{ label: classes.removeLabel }} onClick={this.onRemove}>Remove</Button>
         </Paper>
       </div>
     );
