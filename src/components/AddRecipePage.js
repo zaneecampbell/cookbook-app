@@ -17,7 +17,8 @@ const styles = theme => ({
     maxWidth: '1920px',
     margin: 'auto',
     boxShadow: 'none',
-    background: '#e6e6e6'
+    background: '#e6e6e6',
+    textAlign: 'center'
   }
 });
 

@@ -26,7 +26,8 @@ const styles = theme => ({
     width: '960px',
     padding: '10px',
     marginLeft: '20px',
-    marginRight: '20px'
+    marginRight: '20px',
+    textAlign: 'left'
 },
   removeLabel: {
     fontSize: '20px',
