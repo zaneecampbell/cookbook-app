@@ -98,7 +98,7 @@ export class RecipeForm extends React.Component {
             <Typography style={{fontSize: '35px'}}>Name</Typography>
             <TextField
               type="text"
-              placeholder="example: BLT"
+              placeholder="E.g. BLT"
               autoFocus
               value={this.state.name}
               onChange={this.onNameChange}
@@ -113,7 +113,7 @@ export class RecipeForm extends React.Component {
             <Typography style={{fontSize: '35px'}}>Ingredients</Typography>
             <TextField
               type="text"
-              placeholder="example: Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices"
+              placeholder="E.g. Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices, Bread 2 slices"
               value={this.state.ingredients}
               onChange={this.onIngredientsChange}
               variant='filled'
@@ -126,13 +126,14 @@ export class RecipeForm extends React.Component {
             <br />
             <Typography style={{fontSize: '35px'}}>Instructions</Typography>
             <TextField
-              placeholder="Step 1: Cut Bread&#10;
+              placeholder="E.g.&#10;
+                           Step 1: Cut Bread&#10;
                            Step 2: Stack ingredients on Bread&#10;
                            Step 3: Enclose with other slice of Bread&#10;
                            Step 4: Enjoy!"
               multiline
-              rows='10'
-              rowsMax='50'
+              rows='50'
+              rowsMax='1000'
               value={this.state.instructions}
               onChange={this.onInstructionsChange}
               variant='filled'
@@ -146,7 +147,7 @@ export class RecipeForm extends React.Component {
             <Typography style={{fontSize: '35px'}}>Tags</Typography>
             <TextField
               type="text"
-              placeholder="Tags     example: Christmas, Dessert, French"
+              placeholder="E.g. Christmas, Dessert, French"
               value={this.state.tags}
               onChange={this.onTagsChange}
               variant='filled'
@@ -169,4 +170,4 @@ export class RecipeForm extends React.Component {
 
 export default withStyles(styles)(RecipeForm);
 
-// needs formatting
+// format instructions and ingredients to allow you to input ingredients/steps in seperate boxes then combine for redux/firebase then unfold later
