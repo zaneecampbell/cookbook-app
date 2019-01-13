@@ -39,7 +39,7 @@ export const ViewRecipePage = (props) => {
                         <Typography variant='h3'>
                             Ingredients:
                         </Typography>
-                        <Typography variant='h3'>
+                        <Typography variant='h4'>
                             {
                                 ingredients.map((ingredient) => {
                                     return <li key={ingredient}> {ingredient} </li>
@@ -50,7 +50,7 @@ export const ViewRecipePage = (props) => {
                         <Typography variant='h3'>
                             Instructions:
                         </Typography>
-                        <Typography variant='h3'>
+                        <Typography variant='h4'>
                             &nbsp;&nbsp;&nbsp;&nbsp;{props.recipe.instructions}
                         </Typography>
                     </Grid>
