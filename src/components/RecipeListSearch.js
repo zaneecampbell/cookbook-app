@@ -1,6 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setTextSearch, setTagsSearch } from '../actions/search';
+import { withStyles } from '@material-ui/core/styles';
+import Input from '@material-ui/core/Input';
+
+const styles =  theme => ({
+  inputTextSize : {
+    fontSize: '30px'
+  }
+});
 
 export class RecipeListSearch extends React.Component {
   state = {
@@ -16,23 +24,27 @@ export class RecipeListSearch extends React.Component {
   };
 
   render() {
+    const { classes } = this.props;
+
     return (
         <div>
             <div>
-                <input
+                <Input
                 type="text"
                 placeholder='Search by recipe name'
                 value={this.props.search.text}
                 onChange={this.onTextChange}
+                classes={{ input: classes.inputTextSize }}
                 />
             </div>
             <br />
             <div>
-                <input
+                <Input
                 type="text"
                 placeholder='Search by recipe tags'
                 value={this.props.search.tags}
                 onChange={this.onTagsSearchChange}
+                classes={{ input: classes.inputTextSize }}
                 />
             </div>
             <br />    
@@ -51,6 +63,6 @@ const mapDispatchToProps = (dispatch) => ({
   setTagsSearch: (tags) => dispatch(setTagsSearch(tags))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeListSearch);
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(RecipeListSearch));
 
 // Move search fields to left about recipe list names
