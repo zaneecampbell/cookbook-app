@@ -112,6 +112,7 @@ export class RecipeForm extends React.Component {
             />
             <br />
             <Typography style={{fontSize: '35px'}}>Ingredients</Typography>
+            <Typography style={{fontSize: '15px'}}>(please include commas between ingredients)</Typography>
             <TextField
               type="text"
               placeholder="E.g. Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices, Bread 2 slices"
@@ -126,11 +127,12 @@ export class RecipeForm extends React.Component {
             />
             <br />
             <Typography style={{fontSize: '35px'}}>Instructions</Typography>
+            <Typography style={{fontSize: '15px'}}>(please include commas between steps)</Typography>
             <TextField
               placeholder="E.g.&#10;
-                           Step 1: Cut Bread&#10;
-                           Step 2: Stack ingredients on Bread&#10;
-                           Step 3: Enclose with other slice of Bread&#10;
+                           Step 1: Cut Bread
+                           Step 2: Stack ingredients on Bread
+                           Step 3: Enclose with other slice of Bread
                            Step 4: Enjoy!"
               multiline
               rows='50'

@@ -10,7 +10,8 @@ const styles = theme => ({
         maxWidth: '960px',
         margin: 'auto',
         paddingLeft: '20px',
-        paddingTop: '20px'
+        paddingTop: '20px',
+        paddingBottom: '20px'
     },
     gridTitle: {
 
@@ -42,7 +43,7 @@ export const ViewRecipePage = (props) => {
                         <Typography variant='h4'>
                             {
                                 ingredients.map((ingredient) => {
-                                    return <li key={ingredient}> {ingredient} </li>
+                                    return <li style={{marginTop: '10px'}} key={ingredient}> {ingredient} </li>
                                 })
                             }
                         </Typography>
@@ -50,9 +51,11 @@ export const ViewRecipePage = (props) => {
                         <Typography variant='h3'>
                             Instructions:
                         </Typography>
-                        <Typography variant='h4'>
-                            &nbsp;&nbsp;&nbsp;&nbsp;{props.recipe.instructions}
-                        </Typography>
+                            {
+                                props.recipe.instructions.split(',').map((instruction) => {
+                                    return <Typography style={{marginTop: '25px'}} key={instruction} variant='h4'>{instruction}</Typography>
+                                })
+                            }
                     </Grid>
                 </Grid>
             </Paper>
