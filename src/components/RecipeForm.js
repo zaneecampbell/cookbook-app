@@ -67,7 +67,6 @@ export class RecipeForm extends React.Component {
     this.state.ingredients[id] = ingredient
 
     if (id == this.state.ingredients.length - 1) {
-      console.log(this.state.ingredients)
       this.setState({ ingredients: this.state.ingredients.concat([''])})
     }
   };
@@ -80,8 +79,12 @@ export class RecipeForm extends React.Component {
     this.state.instructions[id] = instruction
 
     this.setState({
-      ...this.state.ingredients[id].concat(instruction)
+      ...this.state.instructions[id].concat(instruction)
     });
+
+    if (id == this.state.instructions.length - 1) {
+      this.setState({ instructions: this.state.instructions.concat([''])})
+    }
   };
 
   // typing in the field changes the tags
@@ -93,14 +96,17 @@ export class RecipeForm extends React.Component {
   onSubmit = (e) => {
     e.preventDefault();
 
+    const removeBlanksIngredients = this.state.ingredients.filter(ingredient => ingredient.length > 0);
+    const removeBlanksInstructions = this.state.instructions.filter(instruction => instruction.length > 0);
+
     if (!this.state.name || !this.state.ingredients || !this.state.instructions) {
       this.setState(() => ({ error: 'Please give your recipe a name, include all ingredients, and some simple instructions!' }));
     } else {
       this.setState(() => ({ error: '' }));
       this.props.onSubmit({
         name: this.state.name,
-        ingredients: this.state.ingredients,
-        instructions: this.state.instructions,
+        ingredients: removeBlanksIngredients,
+        instructions: removeBlanksInstructions,
         tags: this.state.tags
       });
     }
