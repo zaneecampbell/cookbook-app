@@ -43,7 +43,7 @@ export class RecipeForm extends React.Component {
     this.state = {
       name: props.recipe ? props.recipe.name : '',
       ingredients: props.recipe ? props.recipe.ingredients : ['', '', ''],
-      instructions: props.recipe ? props.recipe.instructions : '',
+      instructions: props.recipe ? props.recipe.instructions : ['', '', ''],
       tags: props.recipe ? props.recipe.tags: '',
       error: ''
     };
@@ -69,8 +69,14 @@ export class RecipeForm extends React.Component {
 
   // typing in the field changes the instructions
   onInstructionsChange = (e) => {
-    const instructions = e.target.value;
-    this.setState(() => ({ instructions }));
+    const instruction= e.target.value;
+    const id = e.target.id;
+
+    this.state.instructions[id] = instruction
+
+    this.setState({
+      ...this.state.ingredients[id].concat(instruction)
+    });
   };
 
   // typing in the field changes the tags
@@ -125,7 +131,7 @@ export class RecipeForm extends React.Component {
                 id={`${idx}`}
                 type='text'
                 value={ingredient}
-                placeholder={`${idx + 1}`}
+                placeholder={`Ingredient ${idx + 1}`}
                 onChange={this.onIngredientsChange}
                 InputProps={{
                   classes: {
@@ -136,39 +142,26 @@ export class RecipeForm extends React.Component {
                 autoComplete='off'
               />
             ))}
-            {/* <TextField
-              type="text"
-              placeholder="E.g. Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices, Bread 2 slices"
-              value={this.state.ingredients}
-              onChange={this.onIngredientsChange}
-              variant='filled'
-              InputProps={{
-                classes: {
-                  input: classes.inputTextSize
-                }
-              }}
-            /> */}
             <br />
             <Typography style={{fontSize: '35px'}}>Instructions</Typography>
             <Typography style={{fontSize: '15px'}}>(please include commas between steps)</Typography>
-            <TextField
-              placeholder="E.g.
-                           Step 1: Cut Bread
-                           Step 2: Stack ingredients on Bread
-                           Step 3: Enclose with other slice of Bread
-                           Step 4: Enjoy!"
-              multiline
-              rows='50'
-              rowsMax='1000'
-              value={this.state.instructions}
-              onChange={this.onInstructionsChange}
-              variant='filled'
-              InputProps={{
-                classes: {
-                  inputMultiline: classes.inputTextSizeInstructions
-                }
-              }}
-            />
+            {this.state.instructions.map((instruction, idx) => (
+              <TextField 
+                key={idx}
+                id={`${idx}`}
+                type='text'
+                value={instruction}
+                placeholder={`Step ${idx + 1}`}
+                onChange={this.onInstructionsChange}
+                InputProps={{
+                  classes: {
+                    input: classes.inputTextSize
+                  }
+                }}
+                variant='filled'
+                autoComplete='off'
+              />
+            ))}
             <br />
             <Typography style={{fontSize: '35px'}}>Tags</Typography>
             <TextField
