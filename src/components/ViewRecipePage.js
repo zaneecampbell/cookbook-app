@@ -20,7 +20,6 @@ const styles = theme => ({
 
 export const ViewRecipePage = (props) => {
     const { classes } = props;
-    const ingredients = props.recipe.ingredients.split(', ')
 
     return (
         <div>
@@ -42,7 +41,7 @@ export const ViewRecipePage = (props) => {
                         </Typography>
                         <Typography variant='h4'>
                             {
-                                ingredients.map((ingredient) => {
+                                props.recipe.ingredients.map((ingredient) => {
                                     return <li style={{marginTop: '10px'}} key={ingredient}> {ingredient} </li>
                                 })
                             }
@@ -52,7 +51,7 @@ export const ViewRecipePage = (props) => {
                             Instructions:
                         </Typography>
                             {
-                                props.recipe.instructions.split(',').map((instruction) => {
+                                props.recipe.instructions.map((instruction) => {
                                     return <Typography style={{marginTop: '25px'}} key={instruction} variant='h4'>{instruction}</Typography>
                                 })
                             }

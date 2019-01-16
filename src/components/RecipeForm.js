@@ -65,6 +65,11 @@ export class RecipeForm extends React.Component {
     });
 
     this.state.ingredients[id] = ingredient
+
+    if (id == this.state.ingredients.length - 1) {
+      console.log(this.state.ingredients)
+      this.setState({ ingredients: this.state.ingredients.concat([''])})
+    }
   };
 
   // typing in the field changes the instructions
