@@ -135,7 +135,7 @@ export class RecipeForm extends React.Component {
             />
             <br />
             <Typography style={{fontSize: '35px'}}>Ingredients</Typography>
-            <Typography style={{fontSize: '15px'}}>(please include commas between ingredients)</Typography>
+            <Typography style={{fontSize: '15px'}}>(Typing in the bottom field will add a new field automatically)</Typography>
             {this.state.ingredients.map((ingredient, idx) => (
               <TextField 
                 key={idx}
@@ -155,7 +155,7 @@ export class RecipeForm extends React.Component {
             ))}
             <br />
             <Typography style={{fontSize: '35px'}}>Instructions</Typography>
-            <Typography style={{fontSize: '15px'}}>(please include commas between steps)</Typography>
+            <Typography style={{fontSize: '15px'}}>(Typing in the bottom field will add a new field automatically)</Typography>
             {this.state.instructions.map((instruction, idx) => (
               <TextField 
                 key={idx}

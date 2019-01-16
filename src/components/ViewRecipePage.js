@@ -51,8 +51,8 @@ export const ViewRecipePage = (props) => {
                             Instructions:
                         </Typography>
                             {
-                                props.recipe.instructions.map((instruction) => {
-                                    return <Typography style={{marginTop: '25px'}} key={instruction} variant='h4'>{instruction}</Typography>
+                                props.recipe.instructions.map((instruction, idx) => {
+                                    return <Typography style={{marginTop: '25px'}} key={instruction} variant='h4'>Step {idx + 1}: {instruction}</Typography>
                                 })
                             }
                     </Grid>
