@@ -42,7 +42,7 @@ export class RecipeForm extends React.Component {
 
     this.state = {
       name: props.recipe ? props.recipe.name : '',
-      ingredients: props.recipe ? props.recipe.ingredients : '',
+      ingredients: props.recipe ? props.recipe.ingredients : ['', '', ''],
       instructions: props.recipe ? props.recipe.instructions : '',
       tags: props.recipe ? props.recipe.tags: '',
       error: ''
@@ -57,8 +57,14 @@ export class RecipeForm extends React.Component {
 
   // typing in the field changes the ingredients
   onIngredientsChange = (e) => {
-    const ingredients = e.target.value;
-    this.setState(() => ({ ingredients }));
+    const ingredient = e.target.value;
+    const id = e.target.id;
+
+    this.setState({
+      ...this.state.ingredients[id].concat(ingredient)
+    });
+
+    this.state.ingredients[id] = ingredient
   };
 
   // typing in the field changes the instructions
@@ -113,7 +119,24 @@ export class RecipeForm extends React.Component {
             <br />
             <Typography style={{fontSize: '35px'}}>Ingredients</Typography>
             <Typography style={{fontSize: '15px'}}>(please include commas between ingredients)</Typography>
-            <TextField
+            {this.state.ingredients.map((ingredient, idx) => (
+              <TextField 
+                key={idx}
+                id={`${idx}`}
+                type='text'
+                value={ingredient}
+                placeholder={`${idx + 1}`}
+                onChange={this.onIngredientsChange}
+                InputProps={{
+                  classes: {
+                    input: classes.inputTextSize
+                  }
+                }}
+                variant='filled'
+                autoComplete='off'
+              />
+            ))}
+            {/* <TextField
               type="text"
               placeholder="E.g. Bacon 2 slices, Lettuce 1 leaf, Tomato 2 slices, Bread 2 slices"
               value={this.state.ingredients}
@@ -124,12 +147,12 @@ export class RecipeForm extends React.Component {
                   input: classes.inputTextSize
                 }
               }}
-            />
+            /> */}
             <br />
             <Typography style={{fontSize: '35px'}}>Instructions</Typography>
             <Typography style={{fontSize: '15px'}}>(please include commas between steps)</Typography>
             <TextField
-              placeholder="E.g.&#10;
+              placeholder="E.g.
                            Step 1: Cut Bread
                            Step 2: Stack ingredients on Bread
                            Step 3: Enclose with other slice of Bread
