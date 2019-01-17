@@ -18,6 +18,7 @@ const styles = theme => ({
     }
 });
 
+// formatted version of your recipes from recipe list
 export const ViewRecipePage = (props) => {
     const { classes } = props;
 

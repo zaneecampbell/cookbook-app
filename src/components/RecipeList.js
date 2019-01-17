@@ -20,6 +20,7 @@ const styles = theme => ({
   }
 });
 
+// List of recipes you have
 export const RecipeList = (props) => {
   const { classes } = props;
 

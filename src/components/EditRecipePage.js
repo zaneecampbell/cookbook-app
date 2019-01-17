@@ -40,6 +40,7 @@ export class EditRecipePage extends React.Component {
     this.props.history.push('/');
   };
   
+  // edit existing recipes from cookbookpage
   render() {
     const { classes } = this.props;
 

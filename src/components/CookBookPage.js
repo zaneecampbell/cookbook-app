@@ -19,6 +19,7 @@ const styles = theme => ({
   }
 });
 
+// main page
 const CookBookPage = (props) => {
   const { classes } = props;
 

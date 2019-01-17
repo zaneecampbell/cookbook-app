@@ -15,6 +15,7 @@ const styles = theme => ({
     }
 })
 
+// Loading gif
 export const LoadingPage = (props) => {
     const { classes } = props;
 

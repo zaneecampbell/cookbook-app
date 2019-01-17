@@ -22,6 +22,7 @@ const styles = theme => ({
   }
 });
 
+// Create a new recipe for your cookbookpage
 export class AddRecipePage extends React.Component {
   // submits to firebase and redux then pushes to homepage
   onSubmit = (recipe) => {

@@ -112,6 +112,7 @@ export class RecipeForm extends React.Component {
     }
   };
   
+  // form for Add and Edit recipe pages (maps everything out)
   render() {
     const { classes } = this.props;
     return (

@@ -15,6 +15,7 @@ const styles = theme => ({
     }
 });
 
+// Just a login button
 export const LoginPage = (props) => {
     const { classes } = props;
     return (

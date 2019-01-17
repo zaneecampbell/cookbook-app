@@ -54,6 +54,7 @@ const styles = theme => ({
     }
 });
 
+// how each recipe looks in your recipe list
 const RecipeListItem = ({ id, name, ingredients, instructions, tags, classes }) => {
 
     return (

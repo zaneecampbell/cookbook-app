@@ -20,6 +20,7 @@ const styles = theme => ({
   
 });
 
+// Just a header
 export const Header = (props) => {
   const { classes } = props;
 

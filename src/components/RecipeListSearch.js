@@ -23,6 +23,7 @@ export class RecipeListSearch extends React.Component {
     this.props.setTagsSearch(e.target.value);
   };
 
+  // search abilities for quicker searches
   render() {
     const { classes } = this.props;
 
