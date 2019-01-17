@@ -49,6 +49,15 @@ export class RecipeForm extends React.Component {
     };
   }
 
+  componentWillMount() {
+    if (this.state.name != '') {
+      this.state.ingredients.push('')
+      this.state.instructions.push('')
+    } else {
+
+    }
+  }
+
   // typing in the field changes the name
   onNameChange = (e) => {
     const name = e.target.value;
