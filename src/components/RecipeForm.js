@@ -49,12 +49,13 @@ export class RecipeForm extends React.Component {
     };
   }
 
+  // on load if editting will create empty boxes in ingredient and instruction section (in case you need to add more)
   componentWillMount() {
     if (this.state.name != '') {
       this.state.ingredients.push('')
       this.state.instructions.push('')
     } else {
-
+      // do nothing
     }
   }
 
