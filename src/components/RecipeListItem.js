@@ -17,6 +17,7 @@ const styles = theme => ({
         boxShadow: 'none',
         marginLeft: '20px',
         [theme.breakpoints.only('xs')]: {
+            margin: 'auto',
             textAlign: 'center'
         },
         transition: [theme.transitions.create(
