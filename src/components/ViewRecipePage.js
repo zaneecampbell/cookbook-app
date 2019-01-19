@@ -43,7 +43,9 @@ export const ViewRecipePage = (props) => {
                         <Typography variant='h4'>
                             {
                                 props.recipe.ingredients.map((ingredient) => {
-                                    return <li style={{marginTop: '10px'}} key={ingredient}> {ingredient} </li>
+                                    if (ingredient != '') {
+                                        return <li style={{marginTop: '10px'}} key={ingredient}> {ingredient} </li>
+                                    }
                                 })
                             }
                         </Typography>
@@ -53,7 +55,9 @@ export const ViewRecipePage = (props) => {
                         </Typography>
                             {
                                 props.recipe.instructions.map((instruction, idx) => {
-                                    return <Typography style={{marginTop: '25px'}} key={instruction} variant='h4'>Step {idx + 1}: {instruction}</Typography>
+                                    if (instruction != '') {
+                                        return <Typography style={{marginTop: '25px'}} key={instruction} variant='h4'>Step {idx + 1}: {instruction}</Typography>
+                                    }
                                 })
                             }
                     </Grid>
