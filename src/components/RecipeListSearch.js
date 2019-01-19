@@ -31,8 +31,9 @@ export class RecipeListSearch extends React.Component {
         <div>
             <div>
                 <Input
+                style={{marginLeft: '20px', marginRight: '20px'}}
                 type="text"
-                placeholder='Search by recipe name'
+                placeholder='Search by name'
                 value={this.props.search.text}
                 onChange={this.onTextChange}
                 classes={{ input: classes.inputTextSize }}
@@ -41,8 +42,9 @@ export class RecipeListSearch extends React.Component {
             <br />
             <div>
                 <Input
+                style={{marginLeft: '20px', marginRight: '20px'}}
                 type="text"
-                placeholder='Search by recipe tags'
+                placeholder='Search by tags'
                 value={this.props.search.tags}
                 onChange={this.onTagsSearchChange}
                 classes={{ input: classes.inputTextSize }}
