@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import { Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const styles = theme => ({
     paperWrapper: {
@@ -56,7 +57,13 @@ export const ViewRecipePage = (props) => {
                             {
                                 props.recipe.instructions.map((instruction, idx) => {
                                     if (instruction != '') {
-                                        return <Typography style={{marginTop: '25px'}} key={instruction} variant='h4'>Step {idx + 1}: {instruction}</Typography>
+                                        return (
+                                            <div key={idx}>
+                                                <Checkbox
+                                                />
+                                                <Typography style={{marginTop: '25px'}} key={instruction} variant='h4'>Step {idx + 1}: {instruction}</Typography>
+                                            </div>
+                                        )
                                     }
                                 })
                             }
