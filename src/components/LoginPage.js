@@ -6,6 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
     buttonRoot: {
@@ -25,6 +26,11 @@ export const LoginPage = (props) => {
                     <Button classes={{ root: classes.buttonRoot }} onClick={props.startLogin}>Login</Button>
                 </Toolbar>
             </AppBar>
+            <div>
+                <Paper style={{alignItems: 'center', paddingTop: '25px', paddingBottom: '25px'}}>
+                    <Typography variant='h2' style={{textAlign: 'center'}}> At the moment gmail accounts are the only ones supported more to come.</Typography>
+                </Paper>
+            </div>
         </div>
     )
 }
