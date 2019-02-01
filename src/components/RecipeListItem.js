@@ -10,8 +10,8 @@ const styles = theme => ({
     paperWrapper: {
         paddingTop: '10px',
         paddingBottom: '10px',
-        marginLeft: '20px',
-        marginRight: '20px'
+        boxShadow: 'none',
+        borderBottom: '1px solid'
     },
     typographyPaper: {
         boxShadow: 'none',
@@ -60,7 +60,7 @@ const RecipeListItem = ({ id, name, ingredients, instructions, tags, classes }) 
 
     return (
         <div>
-            <Paper classes={{ root: classes.paperWrapper }}>
+            <Paper square={true} classes={{ root: classes.paperWrapper }}>
                 <Grid
                 container
                 direction="row"
