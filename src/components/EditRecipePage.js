@@ -36,8 +36,12 @@ export class EditRecipePage extends React.Component {
 
   // removes the changes from firebase and redux
   onRemove = () => {
-    this.props.startRemoveRecipe({ id: this.props.recipe.id });
-    this.props.history.push('/');
+    if (confirm(`You are about to delete ${this.props.recipe.name} is that okay?`)) {
+      this.props.startRemoveRecipe({ id: this.props.recipe.id });
+      this.props.history.push('/');
+    } else {
+      // do nothing
+    }
   };
   
   // edit existing recipes from cookbookpage
