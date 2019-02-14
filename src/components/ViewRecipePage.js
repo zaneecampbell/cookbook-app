@@ -30,7 +30,7 @@ export const ViewRecipePage = (props) => {
 
     return (
         <div>
-            <Paper classes={{ root: classes.paperWrapper }}>
+            <Paper square={true} classes={{ root: classes.paperWrapper }}>
                 <Grid
                     container
                     direction="column"
@@ -38,7 +38,7 @@ export const ViewRecipePage = (props) => {
                     alignItems="flex-start"
                 >
                     <Grid xs={12} item>
-                        <Typography variant='h2'>{props.recipe.name}</Typography>
+                        <Typography style={{ fontWeight: '400' }}variant='h1'>{props.recipe.name}</Typography>
                         <Typography style={{ fontSize: '10px' }} variant="overline">Tags: {props.recipe.tags}</Typography>
                         <br />
                     </Grid>
